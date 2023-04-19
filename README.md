@@ -1,5 +1,4 @@
-# m2 S4 Open music
+# M2 S4 Open music
 
-# Open music
-
+## Estrutura
 ![open music.svg](./readmeSrc/open%20music.svg)
