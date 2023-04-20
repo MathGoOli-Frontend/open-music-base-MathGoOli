@@ -24,24 +24,37 @@
         
     </header>
     <nav class="container filter__container">
-      <h2 class="filter__title">gênero musical</h2>
+      <h2 class="filter__title title-2">gênero musical</h2>
       <div class="filter__categories">
         <!-- JS will render it -->
       </div>
       <div class="filter__sliderDiv">
         <div class="filter__priceDiv">
-          <h2>Definir preço</h2>
-          <span>Até R$ 240,00</span>
+          <h2 class="title-2">Definir preço</h2>
+          <span class="priceTag title-3">Até R$ 240,00</span>
         </div>
-        <input type="range" name="" id="">
+        <input class="filter__slider" type="range" min="0" max="100" value="100"name="" id="">
       </div>
 
     </nav>
     <main>
-      <section class="album__container">
-        <h2 class="album__title">Albuns Encontrados</h2>
+      <section class="album__container container">
+        <h2 class="album__title title-2">Albuns Encontrados</h2>
         <ul class="album__deck">
-          <li class="album__card">card</li>
+          <li class="album__card">
+            <img class="album__image"src="./src/assets/img/1.jpg" alt="">
+            <div class="card__mainDiv">
+              <div class="card__div">
+                <span class="album__bandName title-3">band name</span>
+                <span class="title-3">2017</span>
+              </div>
+              <h3 class="title-2">Magnetite</h3>
+              <div class="card__div">
+                <span class="title-3">R$ 70,00</span>
+                <button class="title-3 album__button">comprar</button>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
 
