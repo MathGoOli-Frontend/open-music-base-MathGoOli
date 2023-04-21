@@ -1,4 +1,5 @@
 import {products, categories} from "./productsData.js"
+import {filterButtonStorage} from "./dataLocalStorage.js"
 
 function createCard ({title, category, price, img, band, year, id}){
     // recebe objeto retorna um card
@@ -53,4 +54,16 @@ export function makeDeck(array){
     array.forEach(card => {
         deck.appendChild(createCard(card))
     });
+}
+
+export function filterCards(array){
+    const slider = document.querySelector(".filter__slider")
+
+    const filter = filterButtonStorage()
+    const categoryID = categories.indexOf(filter)
+    
+    if(filter === "Todos"){
+        return array.filter(item => item.price <= Number(slider.value))
+    }      
+    return array.filter(item => item.category == categoryID && item.price <= slider.value)
 }
