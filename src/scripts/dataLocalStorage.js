@@ -1,5 +1,6 @@
 
 export function filterButtonStorage(item){
+    /* verifica se o local storage tem a chave do filtro e armazena e a retorna  */
     if(item){
         localStorage.setItem("filterButton", item)
     }
@@ -13,6 +14,7 @@ export function filterButtonStorage(item){
 }
 
 export function darkmodeStorage(item){
+    /* verifica se o local storage tem a chave do dark mode e armazena e a retorna  */
     if(localStorage.getItem("darkmode") === undefined){
         localStorage.setItem("darkmode", false)
         return localStorage.getItem("darkmode")

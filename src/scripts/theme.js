@@ -2,6 +2,7 @@
 import {darkmodeStorage} from "./dataLocalStorage.js"
 
 export function darkmode(){
+    // faz a lógica botão do dark mode e a verificação do tema no local storage
     const button = document.querySelector(".header__button-darkmode")
     const img = document.querySelector(".header__button-darkmode img")
     const html = document.querySelector("html")

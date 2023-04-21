@@ -2,7 +2,7 @@ import {products, categories} from "./productsData.js"
 import {filterButtonStorage} from "./dataLocalStorage.js"
 
 function createCard ({title, category, price, img, band, year, id}){
-    // recebe objeto retorna um card
+    // recebe objeto retorna um card li
     const li = document.createElement("li")
     li.className = "album__card"
 
@@ -49,6 +49,9 @@ function createCard ({title, category, price, img, band, year, id}){
 }
 
 export function makeDeck(array){
+    /* Faz o loop de um array de produtos.
+    usa a função createCard()
+    adiciona no deck de cartas */
     const deck = document.querySelector(".album__deck")
     deck.innerHTML = ""
     array.forEach(card => {
@@ -57,6 +60,7 @@ export function makeDeck(array){
 }
 
 export function filterCards(array){
+    /* filtra o array de produtos usando a função filterButtonStorage() e o slider */
     const slider = document.querySelector(".filter__slider")
 
     const filter = filterButtonStorage()

@@ -2,30 +2,8 @@ import {categories, products} from './productsData.js'
 import {filterCards,makeDeck} from "./cardHandle.js"
 import {filterButtonStorage} from "./dataLocalStorage.js"
 
-function filterButton(){
-    const filters = document.querySelectorAll(".filter__category")
-
-    filters.forEach(filter => {
-        filter.addEventListener("click",(event) =>{
-            const chosed = event.target.innerText
-            filterButtonStorage(event.target.innerText)
-            filters.forEach(button =>{
-                
-                if(button.innerText == chosed){
-                    button.classList.add("filter__category-selected")
-                    button.dataset.isSelected = true
-                } else {
-                    button.classList.remove("filter__category-selected")
-                    button.dataset.isSelected = false
-                }
-            })
-            
-            makeDeck(filterCards(products))
-        })
-    })
-}
-
-export function genderCreator(){
+export function categoriesButtonsCreator(){
+    // cria todos os botões de categoria de forma dinamica. obs não cria o eventlistener
     const filterDiv = document.querySelector(".filter__categories")
     const config = filterButtonStorage()
     categories.forEach(category => {
@@ -50,7 +28,36 @@ export function genderCreator(){
     filterButton()
 }
 
-function sliderBackground(){
+function filterButton(){
+    // adiciona a função de click nos botões de pesquisa e triga a função de filtro
+    const filters = document.querySelectorAll(".filter__category")
+
+    filters.forEach(filter => {
+        filter.addEventListener("click",(event) =>{
+            const chosed = event.target.innerText
+            filterButtonStorage(event.target.innerText)
+            filters.forEach(button =>{
+                
+                if(button.innerText == chosed){
+                    button.classList.add("filter__category-selected")
+                    button.dataset.isSelected = true
+                } else {
+                    button.classList.remove("filter__category-selected")
+                    button.dataset.isSelected = false
+                }
+            })
+            
+            makeDeck(filterCards(products))
+        })
+    })
+}
+export function sliderBackground(){
+    /* lida com todas as configurações do slider. 
+    incluindo:
+    1 - valor maximo
+    2 - O event listener: com a função filtro. 
+    3 - O event listener: com fundo com duas cores dinamicas.
+    */
     const slider = document.querySelector(".filter__slider")
     slider.style.background = `linear-gradient(90deg, var(--color-brand-1) ${slider.value}%, var(--color-grey-5) ${slider.value}%)`
     const priceSpan = document.querySelector(".priceTag")
@@ -77,4 +84,3 @@ function sliderBackground(){
 }
 
 
-sliderBackground()
