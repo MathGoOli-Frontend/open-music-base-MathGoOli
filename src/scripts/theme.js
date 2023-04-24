@@ -17,10 +17,10 @@ export function darkmode(){
         html.classList.toggle("darkmode")
 
         if (html.classList.contains("darkmode")){
-            img.src = "./src/assets/icons/moon.svg"
+            img.src = "./src/assets/icons/sun.svg" 
             darkmodeStorage(true)
         } else{
-            img.src = "./src/assets/icons/sun.svg"
+            img.src = "./src/assets/icons/moon.svg"
             darkmodeStorage(false)
         }
     })
