@@ -9,7 +9,7 @@ export function darkmode(){
 
     if(darkmodeStorage() == "true"){
         html.classList.add("darkmode")
-        img.src = "./src/assets/icons/moon.svg"
+        img.src = "./src/assets/icons/sun.svg"
     }
 
 
